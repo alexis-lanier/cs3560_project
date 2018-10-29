@@ -2,18 +2,21 @@
 
 const int pingPin = 7;
 double microseconds;
-Servo servo;
+Servo servoRight;
+Servo servoLeft;
 
 void setup() {
   // initialize serial communication:
   Serial.begin(9600);
-  servo.attach(2);
-  servo.write(0);
+  servoRight.attach(2);
+  servoRight.write(0);
 }
 
 void loop() {
   // establish variables for duration of the ping,
   // and the distance result in inches and centimeters:
+  servoRight.write(0);
+  
   double duration, inches, cm;
 
   // The PING))) is triggered by a HIGH pulse of 2 or more microseconds.
@@ -41,13 +44,32 @@ void loop() {
   Serial.print("cm");
   Serial.println();
 
-  if (inches < 2) {
-      servo.write(180);
-      delay(2000);
+  int i = 180;
+  while (inches < 2) {
+    
+    servoRight.write(180);
+    i = i- 20;
+
+    pinMode(pingPin, OUTPUT);
+    digitalWrite(pingPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(pingPin, HIGH);
+    delayMicroseconds(2);
+    digitalWrite(pingPin, LOW);
+
+    pinMode(pingPin, INPUT);
+    duration = pulseIn(pingPin, HIGH);
+
+    inches = microsecondsToInches(duration);
+    cm = microsecondsToCentimeters(duration);
+
+    Serial.print(inches);
+    Serial.print("in, ");;
+    Serial.println();
+
+    delay(1000);
   }
-  else {
-    servo.write(0);
-  }
+
   
   delay(1000);
 }
