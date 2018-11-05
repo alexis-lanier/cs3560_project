@@ -7,20 +7,18 @@ Servo servoLeft;
 
 void setup() {
   // initialize serial communication:
-  Serial.begin(9600);
-  servoRight.attach(2);
-  servoRight.write(0);
+  Serial.begin(19200);
+  servoRight.attach(A3);
+  servoLeft.attach(A4);
 }
 
 void loop() {
-  // establish variables for duration of the ping,
-  // and the distance result in inches and centimeters:
-  servoRight.write(0);
+
+  servoRight.write(180);
+  servoLeft.write(0);
   
   double duration, inches, cm;
-
-  // The PING))) is triggered by a HIGH pulse of 2 or more microseconds.
-  // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
+  
   pinMode(pingPin, OUTPUT);
   digitalWrite(pingPin, LOW);
   delayMicroseconds(2);
@@ -28,9 +26,6 @@ void loop() {
   delayMicroseconds(2);
   digitalWrite(pingPin, LOW);
 
-  // The same pin is used to read the signal from the PING))): a HIGH
-  // pulse whose duration is the time (in microseconds) from the sending
-  // of the ping to the reception of its echo off of an object.
   pinMode(pingPin, INPUT);
   duration = pulseIn(pingPin, HIGH);
 
@@ -44,34 +39,42 @@ void loop() {
   Serial.print("cm");
   Serial.println();
 
-  int i = 180;
-  while (inches < 2) {
-    
-    servoRight.write(180);
-    i = i- 20;
-
-    pinMode(pingPin, OUTPUT);
-    digitalWrite(pingPin, LOW);
-    delayMicroseconds(2);
-    digitalWrite(pingPin, HIGH);
-    delayMicroseconds(2);
-    digitalWrite(pingPin, LOW);
-
-    pinMode(pingPin, INPUT);
-    duration = pulseIn(pingPin, HIGH);
-
-    inches = microsecondsToInches(duration);
-    cm = microsecondsToCentimeters(duration);
-
-    Serial.print(inches);
-    Serial.print("in, ");;
-    Serial.println();
-
-    delay(1000);
+/*
+  if(inches < 2) {
+      servoRight.write(180);
+      delay(2000);
   }
+  else {
+    servoRight.write(0);
+  }
+*/
+    
+  while(inches < 2) {
+
+      servoRight.write(0);
+
+      pinMode(pingPin, OUTPUT);
+      digitalWrite(pingPin, LOW);
+      delayMicroseconds(2);
+      digitalWrite(pingPin, HIGH);
+      delayMicroseconds(2);
+      digitalWrite(pingPin, LOW);
+
+      pinMode(pingPin, INPUT); 
+      duration = pulseIn(pingPin, HIGH);
 
   
-  delay(1000);
+      inches = microsecondsToInches(duration);
+      cm = microsecondsToCentimeters(duration);
+
+      Serial.print(inches);
+      Serial.print("in, ");
+      Serial.println();
+
+      delay(100);
+  }
+
+  delay(100);
 }
 
 double microsecondsToInches(double duration) {
