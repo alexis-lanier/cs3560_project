@@ -1,3 +1,10 @@
+/**
+ * @file ObstacleAvoidance.ino
+ * @brief controls servos and ultrasonic sensor to turn when detects an obstacle
+ * @author Aidan Crowl/Alexis Lanier/Joey Ricker
+ */
+
+
 #include <Servo.h>
 
 const int pingPin = 7;
@@ -77,11 +84,21 @@ void loop() {
   delay(100);
 }
 
+/**
+*@brief converts microsecond duration to a distance in inches
+*@param duration of type double
+*@return duration in inches
+*/
 double microsecondsToInches(double duration) {
  
   return duration / 73.746 / 2.0;
 }
 
+/**
+*@brief converts microsecond duration to a distance in cm
+*@param duration of type double
+*@return duration in cm
+*/
 double microsecondsToCentimeters(double microseconds) {
   // The speed of sound is 340 m/s or 29 microseconds per centimeter.
   // The ping travels out and back, so to find the distance of the
