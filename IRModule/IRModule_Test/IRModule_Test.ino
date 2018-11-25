@@ -1,4 +1,9 @@
-
+/**
+ * @file IRModule_Test.ino
+ * @brief tests line sensor code
+ * @author Aidan Crowl/Joey Ricker/Alexis Lanier
+ */
+ 
 int LED = 13; // Use the onboard Uno LED
 int isObstaclePin = 8;  // This is our input pin
 int isObstacle = HIGH;  // HIGH MEANS NO OBSTACLE

@@ -1,3 +1,9 @@
+/**
+ * @file IRModule_Line.ino
+ * @brief controls infrared sensors to make robot follow line
+ * @author Aidan Crowl/Joey Ricker/Alexis Lanier
+ */
+
 #include <Servo.h>
 
 Servo servoRight;
@@ -22,6 +28,11 @@ void setup() {
   
 }
 
+/**
+*@brief uses IR sensor to detect where line is or if robot has gone off track
+*@param none 
+*@return void
+*/
 void loop() {
   
   isObstacleRight = digitalRead(isObstaclePinRight);
