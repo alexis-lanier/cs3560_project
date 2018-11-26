@@ -1,9 +1,3 @@
-/**
- * @file IRModule_Line.ino
- * @brief controls infrared sensors to make robot follow line
- * @author Aidan Crowl/Joey Ricker/Alexis Lanier
- */
-
 #include <Servo.h>
 
 Servo servoRight;
@@ -23,16 +17,9 @@ void setup() {
   pinMode(isObstaclePinRight, INPUT);
   pinMode(isObstaclePinLeft, INPUT);
   Serial.begin(19200);
-  servoRight.write(180);
-  servoLeft.write(0);
   
 }
 
-/**
-*@brief uses IR sensor to detect where line is or if robot has gone off track
-*@param none 
-*@return void
-*/
 void loop() {
   
   isObstacleRight = digitalRead(isObstaclePinRight);
@@ -42,7 +29,8 @@ void loop() {
     
     Serial.println("Line on the left");
     //Serial.print(isObstacleLeft, isObstacleRight);
-    servoLeft.write(80);
+    servoRight.write(75);
+    servoLeft.write(95);
     leftLine = 1;
     rightLine = 0;
     Serial.print("Left line = ");
@@ -57,7 +45,8 @@ void loop() {
     
     Serial.println("Line on the right");
     //Serial.println(isObstacleLeft, isObstacleRight);
-    servoRight.write(90);
+    servoRight.write(95);
+    servoLeft.write(105);
     leftLine = 0;
     rightLine = 1;
     Serial.print("Left line = ");
@@ -68,12 +57,12 @@ void loop() {
     
   }
   
-  else if (isObstacleRight == LOW && isObstacleLeft == LOW && !(leftLine == 0 && rightLine == 0)) { //((leftLine == 0 && rightLine == 1) || (leftLine == 1 && rightLine == 0) || (leftLine == 1 && rightLine == 1))) {
+  else if (isObstacleRight == LOW && isObstacleLeft == LOW) {
 
     Serial.println("Line in the center");
     //Serial.println(isObstacleLeft, isObstacleRight);
-    servoRight.write(180);
-    servoLeft.write(0);
+    servoRight.write(75);
+    servoLeft.write(102);
     leftLine = 1;
     rightLine = 1;
     Serial.print("Left line = ");
