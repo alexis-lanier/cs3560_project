@@ -1,0 +1,72 @@
+\hypertarget{IRModule__Line_8ino}{}\section{I\+R\+Module/\+I\+R\+Module\+\_\+\+Line/\+I\+R\+Module\+\_\+\+Line.ino File Reference}
+\label{IRModule__Line_8ino}\index{I\+R\+Module/\+I\+R\+Module\+\_\+\+Line/\+I\+R\+Module\+\_\+\+Line.\+ino@{I\+R\+Module/\+I\+R\+Module\+\_\+\+Line/\+I\+R\+Module\+\_\+\+Line.\+ino}}
+
+
+controls infrared sensors to make robot follow line  
+
+
+{\ttfamily \#include $<$Servo.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{IRModule__Line_8ino_a4fc01d736fe50cf5b977f755b675f11d}\label{IRModule__Line_8ino_a4fc01d736fe50cf5b977f755b675f11d}} 
+void {\bfseries setup} ()
+\item 
+void \hyperlink{IRModule__Line_8ino_afe461d27b9c48d5921c00d521181f12f}{loop} ()
+\begin{DoxyCompactList}\small\item\em uses IR sensor to detect where line is or if robot has gone off track \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{IRModule__Line_8ino_adbb774c5273f14bafa2a2ecb0f87723f}\label{IRModule__Line_8ino_adbb774c5273f14bafa2a2ecb0f87723f}} 
+Servo {\bfseries servo\+Right}
+\item 
+\mbox{\Hypertarget{IRModule__Line_8ino_aa9868e91d1d76414c9a127f46e703356}\label{IRModule__Line_8ino_aa9868e91d1d76414c9a127f46e703356}} 
+Servo {\bfseries servo\+Left}
+\item 
+\mbox{\Hypertarget{IRModule__Line_8ino_a7643bc1bb6c5108eab39eb4994cba2eb}\label{IRModule__Line_8ino_a7643bc1bb6c5108eab39eb4994cba2eb}} 
+int {\bfseries is\+Obstacle\+Pin\+Right} = 3
+\item 
+\mbox{\Hypertarget{IRModule__Line_8ino_ad680a8533fda4591420989e7a384755b}\label{IRModule__Line_8ino_ad680a8533fda4591420989e7a384755b}} 
+int {\bfseries is\+Obstacle\+Pin\+Left} = 2
+\item 
+\mbox{\Hypertarget{IRModule__Line_8ino_ad7da1bca923948ca04152885ef7c1a00}\label{IRModule__Line_8ino_ad7da1bca923948ca04152885ef7c1a00}} 
+int {\bfseries is\+Obstacle\+Right} = H\+I\+GH
+\item 
+\mbox{\Hypertarget{IRModule__Line_8ino_a4191e9df94e3df0bb0b25ec25ce2d26b}\label{IRModule__Line_8ino_a4191e9df94e3df0bb0b25ec25ce2d26b}} 
+int {\bfseries is\+Obstacle\+Left} = H\+I\+GH
+\item 
+\mbox{\Hypertarget{IRModule__Line_8ino_a4eba15540f3d848a47b20bb86cdb4773}\label{IRModule__Line_8ino_a4eba15540f3d848a47b20bb86cdb4773}} 
+int {\bfseries left\+Line} = 1
+\item 
+\mbox{\Hypertarget{IRModule__Line_8ino_aeb8cf682644b7374c3169dd677b431eb}\label{IRModule__Line_8ino_aeb8cf682644b7374c3169dd677b431eb}} 
+int {\bfseries right\+Line} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+controls infrared sensors to make robot follow line 
+
+\begin{DoxyAuthor}{Author}
+Aidan Crowl/\+Joey Ricker/\+Alexis Lanier 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{IRModule__Line_8ino_afe461d27b9c48d5921c00d521181f12f}\label{IRModule__Line_8ino_afe461d27b9c48d5921c00d521181f12f}} 
+\index{I\+R\+Module\+\_\+\+Line.\+ino@{I\+R\+Module\+\_\+\+Line.\+ino}!loop@{loop}}
+\index{loop@{loop}!I\+R\+Module\+\_\+\+Line.\+ino@{I\+R\+Module\+\_\+\+Line.\+ino}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+uses IR sensor to detect where line is or if robot has gone off track 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

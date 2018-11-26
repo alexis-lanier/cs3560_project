@@ -1,0 +1,83 @@
+\hypertarget{ObstacleAvoidance_8ino}{}\section{Obstacle\+Avoidance/\+Obstacle\+Avoidance.ino File Reference}
+\label{ObstacleAvoidance_8ino}\index{Obstacle\+Avoidance/\+Obstacle\+Avoidance.\+ino@{Obstacle\+Avoidance/\+Obstacle\+Avoidance.\+ino}}
+
+
+controls servos and ultrasonic sensor to turn when detects an obstacle  
+
+
+{\ttfamily \#include $<$Servo.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ObstacleAvoidance_8ino_a4fc01d736fe50cf5b977f755b675f11d}\label{ObstacleAvoidance_8ino_a4fc01d736fe50cf5b977f755b675f11d}} 
+void {\bfseries setup} ()
+\item 
+\mbox{\Hypertarget{ObstacleAvoidance_8ino_afe461d27b9c48d5921c00d521181f12f}\label{ObstacleAvoidance_8ino_afe461d27b9c48d5921c00d521181f12f}} 
+void {\bfseries loop} ()
+\item 
+double \hyperlink{ObstacleAvoidance_8ino_af3aa08ff26833db406e638b59de8a2e2}{microseconds\+To\+Inches} (double duration)
+\begin{DoxyCompactList}\small\item\em converts microsecond duration to a distance in inches \end{DoxyCompactList}\item 
+double \hyperlink{ObstacleAvoidance_8ino_ab0174ad16903264a1092448d45512f12}{microseconds\+To\+Centimeters} (double microseconds)
+\begin{DoxyCompactList}\small\item\em converts microsecond duration to a distance in cm \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ObstacleAvoidance_8ino_a0b81f9d6d055cc702b14a125d3543385}\label{ObstacleAvoidance_8ino_a0b81f9d6d055cc702b14a125d3543385}} 
+const int {\bfseries ping\+Pin} = 7
+\item 
+\mbox{\Hypertarget{ObstacleAvoidance_8ino_a0f7be42b48abbeb0064e4ddb76c8f73d}\label{ObstacleAvoidance_8ino_a0f7be42b48abbeb0064e4ddb76c8f73d}} 
+double {\bfseries microseconds}
+\item 
+\mbox{\Hypertarget{ObstacleAvoidance_8ino_adbb774c5273f14bafa2a2ecb0f87723f}\label{ObstacleAvoidance_8ino_adbb774c5273f14bafa2a2ecb0f87723f}} 
+Servo {\bfseries servo\+Right}
+\item 
+\mbox{\Hypertarget{ObstacleAvoidance_8ino_aa9868e91d1d76414c9a127f46e703356}\label{ObstacleAvoidance_8ino_aa9868e91d1d76414c9a127f46e703356}} 
+Servo {\bfseries servo\+Left}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+controls servos and ultrasonic sensor to turn when detects an obstacle 
+
+\begin{DoxyAuthor}{Author}
+Aidan Crowl/\+Alexis Lanier/\+Joey Ricker 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ObstacleAvoidance_8ino_ab0174ad16903264a1092448d45512f12}\label{ObstacleAvoidance_8ino_ab0174ad16903264a1092448d45512f12}} 
+\index{Obstacle\+Avoidance.\+ino@{Obstacle\+Avoidance.\+ino}!microseconds\+To\+Centimeters@{microseconds\+To\+Centimeters}}
+\index{microseconds\+To\+Centimeters@{microseconds\+To\+Centimeters}!Obstacle\+Avoidance.\+ino@{Obstacle\+Avoidance.\+ino}}
+\subsubsection{\texorpdfstring{microseconds\+To\+Centimeters()}{microsecondsToCentimeters()}}
+{\footnotesize\ttfamily double microseconds\+To\+Centimeters (\begin{DoxyParamCaption}\item[{double}]{microseconds }\end{DoxyParamCaption})}
+
+
+
+converts microsecond duration to a distance in cm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & of type double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+duration in cm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ObstacleAvoidance_8ino_af3aa08ff26833db406e638b59de8a2e2}\label{ObstacleAvoidance_8ino_af3aa08ff26833db406e638b59de8a2e2}} 
+\index{Obstacle\+Avoidance.\+ino@{Obstacle\+Avoidance.\+ino}!microseconds\+To\+Inches@{microseconds\+To\+Inches}}
+\index{microseconds\+To\+Inches@{microseconds\+To\+Inches}!Obstacle\+Avoidance.\+ino@{Obstacle\+Avoidance.\+ino}}
+\subsubsection{\texorpdfstring{microseconds\+To\+Inches()}{microsecondsToInches()}}
+{\footnotesize\ttfamily double microseconds\+To\+Inches (\begin{DoxyParamCaption}\item[{double}]{duration }\end{DoxyParamCaption})}
+
+
+
+converts microsecond duration to a distance in inches 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & of type double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+duration in inches 
+\end{DoxyReturn}
